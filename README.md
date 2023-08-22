@@ -37,5 +37,5 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 ## License
 
-This project is [MIT](link_to_your_license_file) licensed.
+This project is [MIT](LICENSE) licensed.
 
