@@ -19,13 +19,13 @@ Ever walked out of a mall, concert, or a big event and forgot where you parked? 
 1. Open [CarParX](https://purusoni.com/CarParX) on your mobile browser.
 2. Grant location access to the app.
 3. Drag the marker to your parking location.
-4. Tap 'Save' to remember your parking spot.
+4. Tap 'Save Location' to remember your parking spot.
 5. Return anytime to the site to see your saved parking location.
 
 ## Built With
 
 - **Mapbox:** For rendering maps and providing geolocation services.
-- **Bootstrap:** For a beautiful UI and the mobile-responsive design.
+- **Bootstrap:** For a beautiful UI and mobile-responsive design.
 
 ## Deployment
 
