@@ -2,7 +2,8 @@
 
 A simple, user-friendly tool to help you remember where you parked your car.
 
-![Screenshot of CarParX](screenshot.jpeg)
+<img src="screenshot.jpeg" alt="Screenshot of CarParX" width="200"/>
+
 
 ## Overview
 
