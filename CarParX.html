@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" type="image/x-icon" href="location-pin.png" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <title>CarParX</title>
+    <style>
+        body {
+            padding: 5%;
+            background-color: #010203;
+        }
+        h1, h4{
+            color: #FFFFFF;
+            text-align: center;
+        }
+        p{
+            color: #ffffffac;
+            text-align: center;
+            margin-top: 20px;
+        }
+        #map {
+            width: 100%;
+            height: 100%;
+            border-radius: 5px;
+        }
+        #map-container {
+            position: relative;
+            width: 90vw;
+            height: 50vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 10px;
+        }
+        .alert{
+            margin-top: 30px;
+        }
+        #MarkerButton{
+            margin-top: 30px;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded",() => {
+            navigator.geolocation.getCurrentPosition(position => {
+                const lat = position.coords.latitude;
+                const lng = position.coords.longitude;
+
+                let m_lat = localStorage.getItem('lat');
+                let m_lng = localStorage.getItem('lng');
+
+                mapboxgl.accessToken = 'pk.eyJ1IjoicHVydXNvbmkiLCJhIjoiY2tnM3Y4dmYyMGRwaTJwcGpqNW0yYmF5cCJ9.4-tDdC0Pk9dpW4nZtRKNkQ';
+                var map = new mapboxgl.Map({
+                    container: 'map',
+                    style: 'mapbox://styles/mapbox/satellite-streets-v11',
+                    center: [lng, lat],
+                    zoom: 17.5
+                });
+
+                // Add controls to the map.
+                map.addControl(new mapboxgl.NavigationControl());
+                map.addControl(new mapboxgl.FullscreenControl());
+                map.addControl(new mapboxgl.GeolocateControl({
+                    positionOptions: {
+                        enableHighAccuracy: true
+                    },
+                    trackUserLocation: true
+                }));
+
+                const marker = new mapboxgl.Marker({
+                    draggable: true,
+                    color: '#FF0000',
+                }).setLngLat([lng, lat]).addTo(map);
+
+                if ((!isNaN(m_lat)) && (!isNaN(m_lng))){
+                    marker.setLngLat([m_lng, m_lat]);
+                    map.flyTo({
+                        center: [m_lng, m_lat],
+                        essential: true
+                    });
+                }
+
+                document.querySelector('#save').onclick = () => {
+                    let ll = marker.getLngLat();
+                    localStorage.setItem('lng', ll.lng);
+                    localStorage.setItem('lat', ll.lat);
+                    alert("Location saved successfully!");
+                }
+
+                document.querySelector('#resetMarker').onclick = () => {
+                    navigator.geolocation.getCurrentPosition(position => {
+                        const currentLat = position.coords.latitude;
+                        const currentLng = position.coords.longitude;
+
+                        localStorage.setItem('lng', currentLng);
+                        localStorage.setItem('lat', currentLat);
+
+                        marker.setLngLat([currentLng, currentLat]);
+                        map.flyTo({
+                            center: [currentLng, currentLat],
+                            essential: true
+                        });
+                    });
+                };                
+            });
+        });
+    </script>
+</head>
+<body class="text-success" style="display: flex; flex-wrap: wrap; flex-direction: column">
+    <h1 class="display-1">CarParX</h1>
+    <h4>Save your Parking Location</h3>
+    <p>Drag the marker to where you've parked. Tap 'Save Location' to remember this spot. Return anytime to see your saved location.</p>
+    <div id="map-container" style="display: flex; justify-content: center; align-items: center; flex-direction: column">
+        <div id="map"></div>
+    </div>
+    <div id="MarkerButton">
+        <button id="save" type="button" class="btn btn-primary">Save Location</button>   
+        <button id="resetMarker" type="button" class="btn btn-warning ml-2">Reset Marker</button>
+    </div>
+    <div class="alert alert-warning" role="alert">
+        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-lock-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2.5 9a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-7a2 2 0 0 1-2-2V9z"/>
+            <path fill-rule="evenodd" d="M4.5 4a3.5 3.5 0 1 1 7 0v3h-1V4a2.5 2.5 0 0 0-5 0v3h-1V4z"/>
+        </svg>
+        Your Location is stored in your Browser. Location will be deleted if you clear your History and/or Cookies. <a href="https://stackoverflow.com/questions/8537112/when-is-localstorage-cleared" class="alert-link">Tap to Learn More</a>.
+    </div>
+</body>
+</html>
