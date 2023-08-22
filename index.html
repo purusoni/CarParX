@@ -77,13 +77,18 @@
                     color: '#FF0000',
                 }).setLngLat([lng, lat]).addTo(map);
 
-                if ((!isNaN(m_lat)) && (!isNaN(m_lng))){
+                if ((m_lng != null) && (m_lat != null)){
                     marker.setLngLat([m_lng, m_lat]);
                     map.flyTo({
                         center: [m_lng, m_lat],
                         essential: true
                     });
                 }
+                
+                console.log(m_lng)
+                console.log(m_lat)
+                console.log(m_lng == null)
+                console.log(m_lat == null)
 
                 document.querySelector('#save').onclick = () => {
                     let ll = marker.getLngLat();
