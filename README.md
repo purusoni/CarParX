@@ -33,7 +33,7 @@ CarParX is hosted and can be accessed at [purusoni.com/CarParX](https://purusoni
 
 ## Contributing
 
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/puru-soni-04/CarParX/issues).
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change
 
 ## License
 
