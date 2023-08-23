@@ -30,7 +30,7 @@ Ever walked out of a mall, concert, or a big event and forgot where you parked? 
 
 ## Deployment
 
-CarParX is hosted and can be accessed at [purusoni.com/car](https://purusoni.com/car).
+CarParX is hosted and can be accessed at [purusoni.com/car](https://purusoni.com/car)
 
 ## Contributing
 
