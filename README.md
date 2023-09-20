@@ -2,7 +2,8 @@
 
 A simple, user-friendly tool to help you remember where you parked your car.
 
-***Live @ [purusoni.com/car](https://purusoni.com/car)***
+*Live @ [purusoni.com/car](https://purusoni.com/car)*
+<br>
 
 <img src="screenshot.jpeg" alt="Screenshot of CarParX" width="200"/>
 
