@@ -5,7 +5,7 @@ A simple, user-friendly tool to help you remember where you parked your car.
 *Live @ [purusoni.github.io/CarParX](https://purusoni.github.io/CarParX/)*
 <br>
 
-<img src="screenshot.jpeg" alt="Screenshot of CarParX" width="200"/>
+<img src="screenshot.jpeg" width="200"/>
 
 ## Features
 
