@@ -2,15 +2,10 @@
 
 A simple, user-friendly tool to help you remember where you parked your car.
 
-*Live @ [purusoni.com/car](https://purusoni.com/car)*
+*Live @ [purusoni.github.io/CarParX](https://purusoni.github.io/CarParX/)*
 <br>
 
 <img src="screenshot.jpeg" alt="Screenshot of CarParX" width="200"/>
-
-
-## Overview
-
-Ever walked out of a mall, concert, or a big event and forgot where you parked? CarParX is here to help. With just a few taps, you can save your car's location and easily find it later.
 
 ## Features
 
@@ -20,7 +15,7 @@ Ever walked out of a mall, concert, or a big event and forgot where you parked? 
 
 ## How to Use
 
-1. Open CarParX @ [purusoni.com/car](https://purusoni.com/car) on your mobile browser.
+1. Open CarParX @ [purusoni.github.io/CarParX](https://purusoni.github.io/CarParX/) on your mobile browser.
 2. Grant location access to the app.
 3. Drag the marker to your parking location.
 4. Tap 'Save Location' to remember your parking spot.
@@ -30,16 +25,3 @@ Ever walked out of a mall, concert, or a big event and forgot where you parked? 
 
 - **Mapbox:** For rendering maps and providing geolocation services.
 - **Bootstrap:** For a beautiful UI and mobile-responsive design.
-
-## Deployment
-
-CarParX is hosted and can be accessed at [purusoni.com/car](https://purusoni.com/car)
-
-## Contributing
-
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change
-
-## License
-
-This project is [MIT](LICENSE) licensed.
-
